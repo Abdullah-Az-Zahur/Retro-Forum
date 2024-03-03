@@ -1,11 +1,11 @@
 // let readCount = 0;
 
-const loadPost = async (category='Comedy') => {
+const loadPost = async (category = 'Comedy') => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`);
     const data = await res.json();
 
     const postContainer = document.getElementById('post-container');
-    console.log(data.posts[0].category);
+    // console.log(data.posts[0].category);
 
     postContainer.innerHTML = '';
 
@@ -84,10 +84,50 @@ const clickReadMark = (title, view_count) => {
 }
 
 // handel search
-const handelSearch = async() => {
+const handelSearch = async () => {
 
-const searchField = document.getElementById('search-field');
-const searchText = searchField.value;
-loadPost(searchText);
+    const searchField = document.getElementById('search-field');
+    const searchText = searchField.value;
+    loadPost(searchText);
 
 }
+
+const latestPost = async () => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`)
+    const data = await res.json();
+    // console.log(data[0]);
+
+    const latestPost = document.getElementById('latest-post');
+
+    data.forEach(element => {
+        const div = document.createElement('div')
+
+        div.innerHTML = `
+        <div class="bg-gray-200 p-4 rounded-3xl">
+            <div>
+                <img class="rounded-3xl mb-2" src="${element?.cover_image}" alt="">
+            </div>
+            <div class="flex my-2">
+                <img class"gap-5" src="images/calander.png" alt="">
+                <p>${element?.author?.posted_date}</p>
+            </div>
+            <h4 class="font-bold text-lg">${element?.title}</h4>
+            <p class="text-gray-400">${element?.description}</p>
+            <div class="flex my-2 gap-2">
+                <img class="max-w-sm rounded-full shadow-2xl w-10 h-10 " src="${element?.profile_image}" alt="">
+                 <div class="">
+                    <p>${element?.author?.name}</p>
+                    <p>${element?.author?.designation}</p>
+                 </div>
+             </div>
+
+         </div>
+        `
+        latestPost.appendChild(div);
+    });
+
+    
+
+}
+
+latestPost();
