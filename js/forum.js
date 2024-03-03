@@ -1,10 +1,13 @@
-let readCount = 0;
+// let readCount = 0;
 
-const loadPost = async () => {
-    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
+const loadPost = async (category='Comedy') => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`);
     const data = await res.json();
 
     const postContainer = document.getElementById('post-container');
+    console.log(data.posts[0].category);
+
+    postContainer.innerHTML = '';
 
     data.posts.forEach(element => {
         const div = document.createElement('div');
@@ -57,6 +60,11 @@ loadPost();
 const clickReadMark = (title, view_count) => {
     const readMark = document.getElementById('read-mark');
 
+    const readCount = document.getElementById('read-count').innerText;
+    const convertReadCount = parseInt(readCount);
+    document.getElementById('read-count').innerText = convertReadCount + 1;
+
+
     const div = document.createElement('div');
     div.innerHTML = `
     <div class="flex justify-between">
@@ -71,4 +79,15 @@ const clickReadMark = (title, view_count) => {
                     
     `
     readMark.appendChild(div);
+
+
+}
+
+// handel search
+const handelSearch = async() => {
+
+const searchField = document.getElementById('search-field');
+const searchText = searchField.value;
+loadPost(searchText);
+
 }

@@ -98,9 +98,11 @@
                             class="text-indigo-500">ReTro</span> Forum</h1>
                     <h5 class="inter-400 my-5 text-white">Share your favorite opinion and win and wp <br>
                         forum coffee mug!</h5>
+
+                        <!-- search -->
                     <label class="input input-bordered flex items-center gap-2 w-96 my-12">
-                        <input type="text" class="grow" placeholder="Search" />
-                        <span class="badge badge-info">Search</span>
+                        <input id="search-field" type="text" class="grow" placeholder="Search by Category" />
+                        <button onclick="handelSearch()" class="badge badge-info">Search</button>
                     </label>
                 </div>
 
@@ -140,7 +142,7 @@
                     <!-- title -->
                     <div class="flex justify-between ">
                         <h4 class="font-bold">Title</h4>
-                        <p>Mark as read (<span>4</span>)</p>
+                        <p>Mark as read ( <span id="read-count">0</span> )</p>
                     </div>
                     <!-- read mark -->
                     
