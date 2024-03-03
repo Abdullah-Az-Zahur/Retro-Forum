@@ -1,3 +1,5 @@
+let readCount = 0;
+
 const loadPost = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
     const data = await res.json();
@@ -7,7 +9,7 @@ const loadPost = async () => {
     data.posts.forEach(element => {
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="hero min-h-0 bg-base-200 rounded-3xl my-4">
+        <div class="hero min-h-0 bg-base-200 rounded-3xl my-4 ">
                         <div class="hero-content flex-col lg:flex-row ">
                             <div class="indicator">
                                 <span class="indicator-item badge badge-secondary"></span>
@@ -28,18 +30,18 @@ const loadPost = async () => {
                                     <div class="flex gap-3">
                                         <div class="flex gap-3">
                                             <img class="h-7 w-7" src="images/comment.png" alt="">
-                                            <p id="comment">comment</p>
+                                            <p id="comment">${element?.comment_count}</p>
                                         </div>
                                         <div class="flex gap-3">
                                             <img class="h-7 w-7" src="images/view.png" alt="">
-                                            <p>view</p>
+                                            <p>${element?.view_count}</p>
                                         </div>
                                         <div class="flex gap-3">
                                             <img class="h-7 w-7" src="images/tabler-icon-clock-hour-9.png" alt="">
-                                            <p>clock</p>
+                                            <p>${element.posted_time}</p>
                                         </div>
                                     </div>
-                                    <div class=""><button class="btn rounded-full bg-transparent"><img
+                                    <div class=""><button onclick="clickReadMark('${element?.title}', '${element?.view_count}')" class="btn rounded-full bg-transparent"><img
                                                 src="images/read-mark.png" alt=""></button></div>
                                 </div>
                             </div>
@@ -51,3 +53,22 @@ const loadPost = async () => {
 }
 
 loadPost();
+
+const clickReadMark = (title, view_count) => {
+    const readMark = document.getElementById('read-mark');
+
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <div class="flex justify-between">
+                        <div>
+                            <p>${title}</p>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <img src="images/view.png" alt="">
+                            <p>${view_count}</p>
+                        </div>
+                    </div>
+                    
+    `
+    readMark.appendChild(div);
+}
