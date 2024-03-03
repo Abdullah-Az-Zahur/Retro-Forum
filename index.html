@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReTro Forum</title>
+
+    <!-- DaisyUI  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+    <header class="container mx-auto">
+        <!-- nav -->
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <a class="btn bg-[#797DFC] text-white">Sign In</a>
+                        <li><a>
+                                <!-- home -->
+                                <img src="images/home.png" alt="">
+                            </a>
+                        </li>
+                        <li><a>
+                                <!-- pen -->
+                                <img src="images/pen.png" alt="">
+                            </a>
+                        </li>
+                        <li><a>
+                                <!-- add profile -->
+                                <img src="images/add profile.png" alt="">
+                            </a>
+                        </li>
+                        <li><a>
+                                <!-- flag -->
+                                <img src="images/flag.png" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost text-xl">daisyUI</a>
+            </div>
+            <div class="navbar-end hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a>
+                            <!-- home -->
+                            <img src="images/home.png" alt="">
+                        </a>
+                    </li>
+                    <li><a>
+                            <!-- pen -->
+                            <img src="images/pen.png" alt="">
+                        </a>
+                    </li>
+                    <li><a>
+                            <!-- add profile -->
+                            <img src="images/add profile.png" alt="">
+                        </a>
+                    </li>
+                    <li><a>
+                            <!-- flag -->
+                            <img src="images/flag.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+                <a class="btn bg-[#797DFC] text-white">Sign In</a>
+            </div>
+            <!-- <div class="navbar-end">
+                
+            </div> -->
+        </div>
+
+        <!-- banner section -->
+        <section class="relative header-banner text-center flex flex-col lg:flex-row">
+            <!-- title -->
+            <div class="w-2/3 p-24 text-start">
+                <h1 class="font-extrabold text-6xl">Welcome to the <br><span
+                        class="bg-clip-text bg-gradient-to-r from-indigo-500 to bg-white">ReTro</span> Forum</h1>
+                <h5 class="inter-400">Share your favorite opinion and win and wp <br>
+                    forum coffee mug!</h5>
+                <label class="input input-bordered flex items-center gap-2 w-96">
+                    <input type="text" class="grow" placeholder="Search" />
+                    <span class="badge badge-info">Search</span>
+                </label>
+            </div>
+
+            <!-- activities -->
+            <div class="p-12 bg-white rounded-lg text-start items-center justify-center my-32">
+                <h5 class="font-bold text-3xl">Registered Users <span>01</span></h5>
+                <h5 class="font-bold text-3xl">Forum <span>05</span></h5>
+                <h5 class="font-bold text-3xl">Topics <span>01</span></h5>
+                <h5 class="font-bold text-3xl">Replies <span>01</span></h5>
+
+            </div>
+
+        </section>
+
+    </header>
+
+    <main class="container mx-auto">
+        <!-- discuss Section -->
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!-- script -->
+    <script src="js/forum.js"></script>
+</body>
+
+</html>
