@@ -52,11 +52,11 @@
 /* header banner */
 .header-banner {
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     height: 550px;
     width: screen;
     border-radius: 2rem;
-    background-image: linear-gradient(180deg, rgba(03, 07, 18, 0.5) 50%, rgba(18, 19, 45, 1) 80%), url(../images/bgbanner.png);
+    background-image: url(../images/bgbanner.png), linear-gradient(180deg, rgba(03, 07, 18, 0.5) 50%, rgba(18, 19, 45, 1) 80%);
     /* background-color: #ffffff; */
     background-repeat: no-repeat;
 }
@@ -67,7 +67,7 @@
     /* border-bottom: 1px dotted black; */
 }
 
-.tooltip + .tooltiptext {
+.tooltip+.tooltiptext {
     visibility: hidden;
     width: 120px;
     background-color: black;
@@ -83,6 +83,17 @@
     margin-left: -60px;
 }
 
-.tooltip:hover + .tooltiptext {
+.tooltip:hover+.tooltiptext {
     visibility: visible;
 }
+
+/* .join-forum {
+    background-size: cover;
+    background-position: center;
+    height: 550px;
+    width: screen;
+    border-radius: 2rem;
+    background-image: #12132D;
+    /* background-color: #ffffff; */
+    background-repeat: no-repeat;
+} */
