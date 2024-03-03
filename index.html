@@ -59,22 +59,26 @@
                 <ul class="menu menu-horizontal px-1">
                     <li><a>
                             <!-- home -->
-                            <img src="images/home.png" alt="">
+                            <img class="tooltip" src="images/home.png" alt="">
+                            <div class="tooltiptext">Home</div>
                         </a>
                     </li>
                     <li><a>
                             <!-- pen -->
-                            <img src="images/pen.png" alt="">
+                            <img class="tooltip" src="images/pen.png" alt="">
+                            <div class="tooltiptext">Pen</div>
                         </a>
                     </li>
                     <li><a>
                             <!-- add profile -->
-                            <img src="images/add profile.png" alt="">
+                            <img class="tooltip" src="images/add profile.png" alt="">
+                            <div class="tooltiptext">Profile</div>
                         </a>
                     </li>
                     <li><a>
                             <!-- flag -->
-                            <img src="images/flag.png" alt="">
+                            <img class="tooltip" src="images/flag.png" alt="">
+                            <div class="tooltiptext">Flag</div>
                         </a>
                     </li>
                 </ul>
@@ -89,11 +93,11 @@
         <section class="relative header-banner text-center flex flex-col lg:flex-row">
             <!-- title -->
             <div class="w-2/3 p-24 text-start">
-                <h1 class="font-extrabold text-6xl">Welcome to the <br><span
-                        class="bg-clip-text bg-gradient-to-r from-indigo-500 to bg-white">ReTro</span> Forum</h1>
-                <h5 class="inter-400">Share your favorite opinion and win and wp <br>
+                <h1 class="font-extrabold text-6xl text-white">Welcome to the <br><span
+                        class="text-indigo-500">ReTro</span> Forum</h1>
+                <h5 class="inter-400 my-5 text-white">Share your favorite opinion and win and wp <br>
                     forum coffee mug!</h5>
-                <label class="input input-bordered flex items-center gap-2 w-96">
+                <label class="input input-bordered flex items-center gap-2 w-96 my-12">
                     <input type="text" class="grow" placeholder="Search" />
                     <span class="badge badge-info">Search</span>
                 </label>
@@ -112,10 +116,49 @@
 
     </header>
 
-    <main class="container mx-auto">
+    <main class="container mx-auto my-6">
         <!-- discuss Section -->
+        <section>
+            <!-- lets Discuss -->
+            <div class="my-11 text-center">
+                <h6 class="font-bold text-4xl my-8">Let’s Discuss</h6>
+                <p class="text-gray-400">Yes, you can run unit tests and view the results directly within the app. The
+                    integrated testing
+                    features allow for a streamlined .</p>
+            </div>
+
+            <!-- show posts section -->
+            <!-- post 1 -->
+            <div id="show-post" class="w-2/3">
+                <div class="hero min-h-0 bg-base-200">
+                    <div class="hero-content flex-col lg:flex-row border border-red-500">
+                        <div>
+                            <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
+                                class="max-w-sm rounded-full shadow-2xl max-h-16 border border-red-400 mb-28" />
+                        </div>
+                        <div>
+                            <div class="flex">
+                                <p>Music</p>
+                                <p>Author : <span>Awlad Hossain</span></p>
+
+                            </div>
+                            <h1 class="text-5xl font-bold">10 Kids Unaware of Their Halloween Costume</h1>
+                            <p class="py-6">It’s one thing to subject yourself to ha Halloween costume mishap because,
+                                hey that’s your prerogative</p>
+                            <hr>
+                            <button class="btn btn-primary">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- read marks -->
+            <div>
+
+            </div>
+        </section>
 
     </main>
+
 
     <footer>
 
