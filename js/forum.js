@@ -3,19 +3,18 @@
 const loadPost = async (category = 'Comedy') => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`);
     const data = await res.json();
-
     const postContainer = document.getElementById('post-container');
-    // console.log(data.posts[0].category);
+    // console.log(data.posts[0].isActive);
 
     postContainer.innerHTML = '';
-
+    toggleLoading(true);
     data.posts.forEach(element => {
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="hero min-h-0 bg-base-200 rounded-3xl my-4 ">
                         <div class="hero-content flex-col lg:flex-row ">
                             <div class="indicator">
-                                <span class="indicator-item badge badge-secondary"></span>
+                                <span id="active-status" class="indicator-item badge badge-primary"></span>
                                 <img src="${element?.image}"
                                     class="max-w-sm rounded-full shadow-2xl w-20 h-20  mb-28" />
                             </div>
@@ -23,7 +22,6 @@ const loadPost = async (category = 'Comedy') => {
                                 <div class="flex gap-4">
                                     <p># <span>${element?.category}</span></p>
                                     <p>Author : <span>${element?.author?.name}</span></p>
-
                                 </div>
                                 <h1 class=" text-lg lg:text-xl font-bold">${element?.title}
                                 </h1>
@@ -53,6 +51,11 @@ const loadPost = async (category = 'Comedy') => {
         `
         postContainer.appendChild(div);
     });
+
+    // hide Loading
+    setTimeout(() => {
+        toggleLoading(false);
+    }, 2000)
 }
 
 loadPost();
@@ -79,8 +82,6 @@ const clickReadMark = (title, view_count) => {
                     
     `
     readMark.appendChild(div);
-
-
 }
 
 // handel search
@@ -89,7 +90,6 @@ const handelSearch = async () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     loadPost(searchText);
-
 }
 
 const latestPost = async () => {
@@ -125,9 +125,17 @@ const latestPost = async () => {
         `
         latestPost.appendChild(div);
     });
-
-    
-
 }
 
 latestPost();
+
+
+const toggleLoading = (isLoading) => {
+    const loading = document.getElementById('loading');
+    if (isLoading) {
+        loading.classList.remove('hidden');
+    }
+    else {
+        loading.classList.add('hidden');
+    }
+}
